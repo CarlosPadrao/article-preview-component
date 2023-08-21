@@ -1,0 +1,243 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+html {
+    position: relative;
+    height: 100%;
+}
+
+body {
+    background: hsl(210, 46%, 95%);
+}
+
+.card {
+    display: flex;
+    width: 100%;
+    max-width: 750px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 10px;
+    filter: drop-shadow(2px 4px 6px #dedede);
+}
+
+@media (max-width: 500px) {
+    .card {
+        flex-wrap: wrap;
+        width: 88%;
+    }
+}
+
+.card .col-A {
+    flex: 0 0 38%;
+    max-width: 38%;
+}
+
+.__thumbnail {
+    display: block;
+    height: 100%;
+    background: url('../images/drawers.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: 0px;
+    border-radius: 10px 0 0 10px;
+}
+
+@media (max-width: 500px) {
+    .__thumbnail {
+        height: 210px;
+        border-radius: 10px 10px 0 0;
+        background-position-y: -18px;
+    }
+}
+
+.card .col-B {
+    flex: 0 0 62%;
+    max-width: 62%;
+    align-self: center;
+}
+
+@media (max-width: 500px) {
+    .card .col-A,
+    .card .col-B {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+
+/* Coluna B */
+.col-B .__content {
+    padding: 30px 45px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 15px;
+}
+
+@media (max-width: 500px) {
+    .col-B .__content {
+        padding: 30px 30px 20px;
+    }
+}
+
+.__content .title {
+    color: hsl(217, 19%, 35%);
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 700;
+}
+
+@media (max-width: 500px) {
+    .__content .title {
+        font-size: 18px;
+        line-height: 25px;
+    }
+}
+
+.__content .subtitle {
+    color: hsl(214, 17%, 51%);
+    font-size: 13px;
+    line-height: 19px;
+    font-weight: 500;
+    max-width: 90%;
+}
+
+@media (max-width: 500px;) {
+    .__content .subtitle {
+        font-size: 12px;
+    }
+}
+
+.author {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.author .__avatar img {
+    max-width: 45px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.author .__perfil .__name {
+    color: hsl(217, 19%, 35%);
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 4px
+}
+
+.author .__perfil .__date {
+    color: hsl(212, 23%, 69%);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.social_media_share {
+    position: relative;
+}
+
+.social_media_share img {
+    border-radius: 50%;
+    padding: 10px 9px;
+    background: hsl(210, 46%, 95%);
+    cursor: pointer;
+}
+
+.social_media_share.active img {
+    filter: invert(0.1);
+    transition: .5s ease;
+}
+
+@media (max-width: 500px) {
+    .social_media_share.active img {
+        transition: .1s ease;
+    }
+}
+
+.social_media_share .lightbox {
+    font-size: 12px;
+    letter-spacing: 2px;
+    position: absolute;
+    left: 52px;
+    top: -8px;
+    width: 200px;
+    height:45px;
+    background: hsl(217, 19%, 35%);
+    color: hsl(212, 23%, 69%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    border-radius: 10px;
+    display: none;
+}
+
+.social_media_share.active .lightbox {
+    display: flex;
+}
+
+@media (max-width: 500px) {
+    .social_media_share.active .lightbox {
+        left: -280px;
+        width: 343px;
+        max-width: 343px;
+        top: 75px;
+    }
+}
+
+.fb {
+    background: url('../images/icon-facebook.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.tt {
+    background: url('../images/icon-twitter.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.pt {
+    background: url('../images/icon-pinterest.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+
+/* Chall infos & links */
+.attribution {
+    color: #fff;
+    background: rgb(76 66 241);
+    font-size: 14px; 
+    text-align: center; 
+    font-weight: 700;
+    padding: 15px 0;
+}
+
+.attribution a {
+    color: #fff;
+    transition: 0.5s ease;
+}
+
+.attribution a:hover {
+    font-size: 16px;
+    transition: 0.5s ease;
+}
